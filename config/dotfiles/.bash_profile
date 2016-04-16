@@ -15,7 +15,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias smysql="/usr/local/bin/mysql.server start"
 
 # Include my own git parse type function
-source ~/.git_status_in_prompt.sh
+source $HOME/.git_status_in_prompt.sh
 
 #Sets the shell prompt to "DIRECTORY [- GIT_BARNCH]\n→"
 export PS1='\[\033[36m\]\w $(git branch &>/dev/null; if [ $? -eq 0 ]; then \

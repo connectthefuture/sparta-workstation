@@ -28,5 +28,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "file", source: "config/dotfiles/.git_status_in_prompt.sh", destination: ".git_status_in_prompt.sh"
 
   # Run the provisioning script
-  config.vm.provision "shell", path: "config/provision.sh"
+  config.vm.provision "shell", path: "config/provision-root.sh", keep_color: true, privileged: true
+  config.vm.provision "shell", path: "config/provision.sh", keep_color: true, privileged: false
 end
