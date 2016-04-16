@@ -1,0 +1,14 @@
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  lg = log --oneline --decorate --all --graph
+  cl = clone
+  s = status -s
+[core]
+  autocrlf = input
