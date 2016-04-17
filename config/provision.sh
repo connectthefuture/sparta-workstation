@@ -26,3 +26,8 @@ rbenv global $LATEST_RUBY
 # Update rubygems and install standard gems
 gem update --no-ri --no-rdo --system
 gem install --no-ri --no-rdo bundler brice pry pry-nav pry-doc json awesome_print
+
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
+vim +PlugClean +qall
