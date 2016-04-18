@@ -22,7 +22,7 @@ apt-get update
 
 # Install MySQL Server
 export DEBIAN_FRONTEND=noninteractive
--E apt-get -q -y install mysql-server
+apt-get -q -y install mysql-server
 
 # Install Extra Development tools
 apt-get install -y node httpie vim curl
