@@ -1,10 +1,21 @@
 #/bin/bash
 
 echo "------------------- Running as user: $(whoami) -------------------"
+
+# Fix bootloader issue
+# (http://askubuntu.com/questions/146921/how-do-i-apt-get-y-dist-upgrade-without-a-grub-config-prompt)
+export 'GRUB_RECORDFAIL_TIMEOUT=0' > /etc/default/grub
+export DEBIAN_FRONTEND=noninteractive
+
+# unset UCF_FORCE_CONFFOLD
+# export UCF_FORCE_CONFFNEW=YES
+# ucf --purge /boot/grub/menu.lst
+
+apt-get -y update
+apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+
 # Upgrade system and install dependancies
-apt-get update
-apt-get -y upgrade
-apt-get install -y language-pack-en build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ssl-cert subversion language-pack-en debconf-utils
+apt-get install -y language-pack-en build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ssl-cert subversion language-pack-en debconf-utils python-pip
 
 # Install Redis (http://vvv.tobiassjosten.net/linux/installing-redis-on-ubuntu-with-apt/)
 echo "# /etc/apt/sources.list.d/dotdeb.org.list" > /etc/apt/sources.list.d/dotdeb.org.list
@@ -25,4 +36,5 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -q -y install mysql-server
 
 # Install Extra Development tools
-apt-get install -y node httpie vim curl
+apt-get install -y node vim curl
+

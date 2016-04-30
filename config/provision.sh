@@ -3,6 +3,13 @@
 export LATEST_RUBY=2.3.0
 echo "------------------- Running as user: $(whoami) -------------------"
 
+# Upgrade pip
+echo "Installing Pip with $(which pip)"
+pip install --upgrade pip setuptools
+
+# Install HTTPie
+pip install --upgrade httpie
+
 # Install rbenv
 # export RBENV_ROOT="/home/vagrant/.rbenv"
 git clone https://github.com/rbenv/rbenv.git /home/vagrant/.rbenv
@@ -31,3 +38,8 @@ gem install --no-ri --no-rdo bundler brice pry pry-nav pry-doc json awesome_prin
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
 vim +PlugClean +qall
+
+# Remove postinstall script that comes with hashicorp/precise32 box.
+rm -f /home/vagrant/postinstall.sh
+
+echo "------------------- Done running provisioning scripts -------------------"

@@ -20,7 +20,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Forward port 3000 to the host
   config.vm.network :forwarded_port, guest: 3000, host: 3000 # WebBrick
-  config.vm.network :forwarded_port, guest: 3306, host: 3306 # SQL
 
   # Move dotfiles over
   config.vm.provision "file", source: "config/dotfiles/.bash_profile", destination: ".bash_profile"
