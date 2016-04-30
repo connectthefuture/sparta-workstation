@@ -42,4 +42,6 @@ vim +PlugClean +qall
 # Remove postinstall script that comes with hashicorp/precise32 box.
 rm -f /home/vagrant/postinstall.sh
 
+# Remove pip temporary build folder if it exists
+rm -fr /home/vagrant/build
 echo "------------------- Done running provisioning scripts -------------------"
