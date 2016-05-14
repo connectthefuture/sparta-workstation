@@ -26,8 +26,8 @@ echo "bundler\nbrice\nhirb\ngist\npry\npry-doc\nawesome_print\nspecific_install"
 # Install Rubies
 rbenv install $LATEST_RUBY
 rbenv rehash
-rbenv install 2.1.9
-rbenv rehash
+#rbenv install 2.1.9
+#rbenv rehash
 rbenv global $LATEST_RUBY
 
 # Update rubygems and install standard gems
