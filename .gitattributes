@@ -1,0 +1,7 @@
+# Declare files that will always have LF (Unix-style) line endings on checkout.
+.vimrc text eol=lf
+.pryrc text eol=lf
+.irbrc text eol=lf
+.gitconfig text eol=lf
+.git_status_in_prompt.sh text eol=lf
+.bash_profile text eol=lf
