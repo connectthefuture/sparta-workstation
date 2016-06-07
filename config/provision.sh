@@ -3,13 +3,6 @@
 export LATEST_RUBY=2.3.0
 echo "------------------- Running as user: $(whoami) -------------------"
 
-# Upgrade pip
-echo "Installing Pip with $(which pip)"
-pip install --upgrade pip setuptools
-
-# Install HTTPie
-pip install --upgrade httpie
-
 # Install rbenv
 # export RBENV_ROOT="/home/vagrant/.rbenv"
 git clone https://github.com/rbenv/rbenv.git /home/vagrant/.rbenv
@@ -35,7 +28,12 @@ gem update --no-ri --no-rdo --system
 gem install --no-ri --no-rdo bundler brice pry pry-nav pry-doc json awesome_print
 
 # Install vim-plug
+
+echo "------------------- Installing Vim Plug -------------------"
+
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "------------------- Running Vim Plug Commands -------------------"
+
 vim +PlugInstall +qall
 vim +PlugClean +qall
 

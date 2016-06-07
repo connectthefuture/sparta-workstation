@@ -38,3 +38,9 @@ apt-get -q -y install mysql-server
 # Install Extra Development tools
 apt-get install -y node vim curl
 
+# Upgrade pip
+echo "Upgrading Pip with $(which pip)"
+pip install --upgrade pip setuptools
+
+# Install HTTPie
+/usr/local/bin/pip install --upgrade httpie
