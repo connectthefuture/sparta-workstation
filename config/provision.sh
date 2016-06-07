@@ -1,6 +1,6 @@
 #/bin/bash
 
-export LATEST_RUBY=2.3.0
+export LATEST_RUBY=2.3.1
 echo "------------------- Running as user: $(whoami) -------------------"
 
 # Install rbenv
