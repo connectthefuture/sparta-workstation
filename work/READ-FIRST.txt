@@ -4,6 +4,6 @@ Your work directory
 This folder contains tour projects and work.
 It's shared between your local machine and the Vagrant VM.
 
-You should put your work in seperate folder within here.
-I'd reccomend using one folder for each project or set of files. That
-way you can make each of them a seperate git project.
+You should put your work in seperate folders within this directory.
+We reccomend using one folder for each project or set of files. That
+way you can make each of them a seperate git repositary.
