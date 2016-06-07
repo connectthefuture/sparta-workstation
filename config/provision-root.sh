@@ -7,10 +7,6 @@ echo "------------------- Running as user: $(whoami) -------------------"
 export 'GRUB_RECORDFAIL_TIMEOUT=0' > /etc/default/grub
 export DEBIAN_FRONTEND=noninteractive
 
-# unset UCF_FORCE_CONFFOLD
-# export UCF_FORCE_CONFFNEW=YES
-# ucf --purge /boot/grub/menu.lst
-
 apt-get -y update
 apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 
