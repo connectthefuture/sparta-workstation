@@ -30,8 +30,8 @@ echo "Installing Vim Plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "Running Vim Plug Commands"
 
-vim +PlugInstall +qall
-vim +PlugClean +qall
+vim :silent +PlugInstall +qall
+vim :silent +PlugClean +qall
 
 # Remove postinstall script that comes with hashicorp/precise32 box.
 rm -f /home/vagrant/postinstall.sh
