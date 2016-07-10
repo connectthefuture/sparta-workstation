@@ -65,7 +65,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-colo monokai
+try
+    colo monokai
+catch /^Vim\%((\a\+)\)\=:E185/
+    " No monokai installed :(
+endtry
 
 """""""""""""""""""""" Syntax Highlighting etc """"""""""""""""""""""
 
